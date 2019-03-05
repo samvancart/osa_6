@@ -11,11 +11,7 @@ const AnecdoteForm = (props) => {
         event.target.anecdote.value = ''
         props.createNew(content)
 
-        props.showNotification(`created '${content}'`)
-
-        setTimeout(() => {
-            props.showNotification('')
-        }, 5000)
+        props.showNotification(`created '${content}'`, 5)
     }
 
     return (

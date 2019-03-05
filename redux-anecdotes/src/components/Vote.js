@@ -5,17 +5,13 @@ import { showNotification } from '../reducers/notificationReducer'
 
 const Vote = (props) => {
 
-    const vote = (id, content) => {
-        props.addVote(id)
-        props.showNotification(`you voted for '${content}'`)
-
-        setTimeout(() => {
-            props.showNotification('')
-        }, 5000)
+    const vote = (anecdote) => {
+        props.addVote(anecdote)
+        props.showNotification(`you voted for '${anecdote.content}'`, 5)
     }
 
     return (
-        <button onClick={() => vote(props.anecdote.id, props.anecdote.content)}>vote</button>
+        <button onClick={() => vote(props.anecdote)}>vote</button>
     )
 }
 

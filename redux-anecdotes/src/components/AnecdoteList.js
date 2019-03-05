@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Vote from './Vote'
 
 const AnecdoteList =  (props) => {
-    console.log(props)
     const anecdotes = props.anecdotes
     return (
         <div>
